@@ -30,7 +30,7 @@ const AboutPage = () => (
         <li>Express</li>
         <li>Node.js</li>
         <li>PostrgreSQL</li>
-        <li>Responsive Web Design(Flexbox, Flexbox-Grid)</li>
+        <li>Responsive Web Design(Flexbox, CSS Grid)</li>
       </ul>
     </div>
   </div>
