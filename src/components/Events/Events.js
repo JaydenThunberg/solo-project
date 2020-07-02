@@ -22,6 +22,7 @@ class Events extends Component {
                         <EventItem key={item.event_name} item={item} />
                     )
                 })}
+                
             </div>
         );//end return
     }//end render
