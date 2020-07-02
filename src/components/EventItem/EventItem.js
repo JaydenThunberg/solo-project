@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 class EventItem extends Component{
     render(){
         return(
-
-            <h1>EventItems</h1>
+            <span>EventItems</span>
         )//end return
     }//end render
 }//end class
