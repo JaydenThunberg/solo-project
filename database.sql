@@ -25,7 +25,11 @@ CREATE TABLE "events" (
     "category_id" INT REFERENCES category,
     "location" INT,
     "link" VARCHAR(300) DEFAULT 'N/A',
-    "user_id" INT REFERENCES "user"
+    "user_id" INT REFERENCES "user",
+    "poster" VARCHAR (300),
+    "start_date" DATE,
+    "end_date" DATE,
+    "approved" boolean DEFAULT false
 );
 
 CREATE TABLE "stores" (

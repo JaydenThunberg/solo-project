@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EventItem from '../EventItem/EventItem';
+import EventForm from '../EventForm/EventForm';
 
 class Events extends Component {
     // Renders the entire Events on the DOM
@@ -22,7 +23,7 @@ class Events extends Component {
                         <EventItem key={item.event_name} item={item} />
                     )
                 })}
-                
+                <EventForm />
             </div>
         );//end return
     }//end render
