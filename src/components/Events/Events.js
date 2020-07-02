@@ -23,6 +23,7 @@ class Events extends Component {
                         <EventItem key={item.event_name} item={item} />
                     )
                 })}
+                <br/>
                 <EventForm />
             </div>
         );//end return
