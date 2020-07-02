@@ -19,7 +19,7 @@ class EventForm extends Component {
 
     sendDetails = () => {
         console.log('state:', this.state)
-        // this.props.dispatch({ type:'NEW_EVENT', payload: this.state})
+        this.props.dispatch({ type:'NEW_EVENT', payload: this.state})
         this.setState({
             name: '',
             startDate: '',
