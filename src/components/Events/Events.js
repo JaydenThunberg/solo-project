@@ -16,8 +16,12 @@ class Events extends Component {
             <div className="Events">
                 <h1>Events</h1>
                 {/* This will have a map of the redux state to get events and send them to EventItem */}
-                <EventItem />
-                {console.log(this.props.reduxState.events)}
+                {/* {console.log(this.props.reduxState.events)} */}
+                {this.props.reduxState.events.map((item) => {
+                    return (
+                        <EventItem key={item.event_name} item={item} />
+                    )
+                })}
             </div>
         );//end return
     }//end render
