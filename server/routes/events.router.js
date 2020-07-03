@@ -25,7 +25,17 @@ router.get('/', (req, res) => {
  * POST route template
  */
 router.post('/', (req, res) => {
+console.log('req.body in POST:',req.body)
+let queryText = `INSERT INTO "events" ( "event_name", "location", "start_date", "end_date", "link" )
+VALUES ($1, $2, $3, $4, $5);`
 
+pool.query(queryText, [req.body.name, req.body.location, req.body.startDate, req.body.endDate, req.body.mediaLink])
+.then((result) => {
+  res.sendStatus(201);
+}).catch((error) => {
+  console.log(error)
+  res.sendStatus(500);
+})
 });
 
 module.exports = router;
