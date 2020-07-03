@@ -33,7 +33,7 @@ class EventItem extends Component {
                     <li>
                         {description}
                     </li>
-
+                    <button>Delete</button>
                 </ul>
             </div>
 
