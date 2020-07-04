@@ -3,23 +3,19 @@ import { connect } from 'react-redux';
 import Moment from 'react-moment';
 
 class EventItem extends Component {
-
+  deleteEvent = () => {
+      console.log('clicked DELETE')
+  }  
 
     render() {
-        // formatDate = (dateString) => {
-        //     let date = new Date(dateString);
-        //     return date.toLocaleDateString();
-        // }; // end formatDate
-
         const name = this.props.item.event_name;
         const description = this.props.item.description;
         const startDate = this.props.item.start_date;
         const endDate = this.props.item.end_date;
-        // const startDate = formatDate(this.props.item.start_date);
+
         return (
             <div>
                 <p>Event:</p>
-                {console.log('in EventItem props are:', this.props.item)}
                 <ul>
                     <li>
                         <b>{name}</b>
@@ -33,7 +29,7 @@ class EventItem extends Component {
                     <li>
                         {description}
                     </li>
-                    <button>Delete</button>
+                    <button onClick={this.deleteEvent}>Delete</button>
                 </ul>
             </div>
 

@@ -4,6 +4,17 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* eventSaga() {
     yield takeEvery( 'GET_EVENTS', fetchEvents)
     yield takeEvery('NEW_EVENT', addEvent)
+    yield takeEvery('DELETE_EVENT', deleteEvent)
+}
+
+function* deleteEvent(action){
+    try{
+        yield axios.delete(`api/events/${action.payload}`)
+        yield put({type: 'SET_EVENTS'})
+    } catch(error) {
+        alert('Sorry, there was an error deleting the event. Please contact an admin.')
+        console.log('error in DELETE event:', error);
+    }
 }
 
 function* addEvent(action){
@@ -11,13 +22,12 @@ function* addEvent(action){
     try {
         //send payload to DB
         yield axios.post(`/api/events`, (action.payload))
-        // yield put({ type: 'SET_EVENTS'});
-    } catch (err) {
+        yield put({ type: 'SET_EVENTS'});
+    } catch (error) {
         alert('Sorry, there was an error adding the event.')
-        console.log('error in editMovie', err);
+        console.log('error in addEvent', error);
     }
 }//end addEvent
-
 
 function* fetchEvents() {
     try {
