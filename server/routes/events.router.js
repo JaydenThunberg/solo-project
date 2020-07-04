@@ -7,7 +7,7 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   console.log('in GET movies')
-  const queryText = `SELECT "event_name", "description", "link", "start_date", "end_date" from events 
+  const queryText = `SELECT "id", "event_name", "description", "link", "start_date", "end_date" from events 
     WHERE "approved" = TRUE
     ORDER BY "start_date" ASC;`;
   pool.query(queryText)
@@ -26,9 +26,9 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   console.log('req.body in POST:', req.body)
-  let queryText = `INSERT INTO "events" ( "event_name", "location", "start_date", "end_date", "link" )
-  VALUES ($1, $2, $3, $4, $5);`
-  pool.query(queryText, [req.body.name, req.body.location, req.body.startDate, req.body.endDate, req.body.mediaLink])
+  let queryText = `INSERT INTO "events" ( "event_name", "description", "location", "start_date", "end_date", "link" )
+  VALUES ($1, $2, $3, $4, $5, $6);`
+  pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.startDate, req.body.endDate, req.body.mediaLink])
     .then((result) => {
       res.sendStatus(201);
     }).catch((error) => {

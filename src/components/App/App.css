@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0px;
 }
 
@@ -48,8 +48,21 @@ input {
     cursor: pointer;
 }
 
+.App{
+    margin: 10px;
+}
+
+.Events{
+    margin: 10px;
+}
+
+
 .eventForm{
     border-style: double;
     max-width: 600px;
     max-height: max-content;
+}
+
+.alignDelete{
+    justify-content: center;
 }

@@ -5,7 +5,9 @@ import Moment from 'react-moment';
 class EventItem extends Component {
   deleteEvent = () => {
       console.log('clicked DELETE')
-  }  
+      this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id});
+      this.props.dispatch({ type: 'GET_EVENT' });
+  }//end deleteEvent  
 
     render() {
         const name = this.props.item.event_name;

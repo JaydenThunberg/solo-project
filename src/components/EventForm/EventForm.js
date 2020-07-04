@@ -6,6 +6,7 @@ class EventForm extends Component {
         name: '',
         startDate: '',
         endDate: '',
+        description: '',
         location: '',
         mediaLink: ''
     }
@@ -24,6 +25,7 @@ class EventForm extends Component {
             name: '',
             startDate: '',
             endDate: '',
+            description: '',
             location: '',
             mediaLink: ''
         })
@@ -41,10 +43,14 @@ class EventForm extends Component {
                     <span>to</span>
                     <input placeholder="End: MM/DD/YYYY" value={this.state.endDate} onChange={(event) => this.eventDetails(event, 'endDate')} />
                     <br />
+                    <span>Description: </span><textarea placeholder="event description goes here" value={this.state.description} onChange={(event) => this.eventDetails(event, 'description')} />
+                    <br/>
                     <span>Location: </span><input placeholder="City, State, Country" value={this.state.location} onChange={(event) => this.eventDetails(event, 'location')} />
                     <span>Link: </span><input placeholder="website/ media" value={this.state.mediaLink} onChange={(event) => this.eventDetails(event, 'mediaLink')} />
                     <br />
+                    <div className="alignDelete">
                     <button onClick={this.sendDetails}>Request to Add</button>
+                    </div>
                     <br />
                 </div>
                 <p>An admin will need to review your request.</p>
