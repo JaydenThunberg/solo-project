@@ -41,9 +41,11 @@ router.delete('/:id', (req, res) => {
   console.log('in /api/events DELETE ', req.params);
   /* ADD reject if auth_level is less than 2  
   EX: */
-  if (req.isAuthenticated() === true) {
+  // if (req.isAuthenticated() === true) {
     // let queryText = `DELETE FROM "events" WHERE id=$1 AND "auth_level" < $2`;
-    pool.query(queryText, [req.params.id, req.user.auth_lvel])
+    // pool.query(queryText, [req.params.id, req.user.auth_level])
+    let queryText = `DELETE FROM "events" WHERE id = $1;`;
+    pool.query(queryText, [req.params.id])
       .then((result) => {
         res.sendStatus(200);
       }).catch((error) => {
@@ -51,9 +53,9 @@ router.delete('/:id', (req, res) => {
         alert('Sorry, you do not have authorization to delete an event. Please contact an admin.')
         res.sendStatus(500);
       });
-  } else {
-    res.sendStatus(401)
-  }
+  // } else {
+  //   res.sendStatus(401)
+  // }
 });
 
 module.exports = router;
