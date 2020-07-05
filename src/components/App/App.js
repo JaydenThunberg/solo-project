@@ -18,6 +18,7 @@ import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import Events from '../Events/Events';
 import EditEvent from '../EditEvent/EditEvent';
+import EditEventMap from '../EditEventMap/EditEventMap';
 
 import './App.css';
 
@@ -66,7 +67,7 @@ class App extends Component {
               <ProtectedRoute
                 exact
                 path="/edit"
-                component={EditEvent}
+                component={EditEventMap}
               />
 
               {/* If none of the other routes matched, we will show a 404. */}
