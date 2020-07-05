@@ -23,6 +23,13 @@ const Nav = (props) => (
           </Link>
         </>
       )}
+      {props.user.id === 1 && (
+        <>
+          <Link className="nav-link" to="/edit">
+            Edit Events
+          </Link>
+        </>
+      )}
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>

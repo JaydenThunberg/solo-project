@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 
-class EventItem extends Component {
-  deleteEvent = () => {
-      console.log('clicked DELETE')
-      this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id});
-      this.props.dispatch({ type: 'GET_EVENT' });
-  }//end deleteEvent  
+class EventItem extends Component { 
 
     render() {
         const name = this.props.item.event_name;
@@ -31,7 +26,6 @@ class EventItem extends Component {
                     <li>
                         {description}
                     </li>
-                    <button onClick={this.deleteEvent}>Delete</button>
                 </ul>
             </div>
 
