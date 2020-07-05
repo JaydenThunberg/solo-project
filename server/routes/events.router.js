@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
-  console.log('in GET movies')
+  console.log('in GET events')
   const queryText = `SELECT "id", "event_name", "description", "link", "start_date", "end_date" from events 
     WHERE "approved" = TRUE
     ORDER BY "start_date" ASC;`;
@@ -60,24 +60,24 @@ router.delete('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
   console.log('in PUT req.body is:', req.body)
-  let queryText = `UPDATE "events" 
-  SET event_name = $ ,
-  description = $,
-  location = $,
-  link = $,
-  start_date = $,
-  end_date = $
-  WHERE id = $
-  ;`;
-  pool.query(queryText, [req.body.name,])
-      .then(result => {
-          res.send(result.rows);
-      })
-      .catch(error => {
-          console.log('error updating: ', error)
-          alert('Error updating the event. Please contact an admin.')
-          res.sendStatus(500);
-      })
+  // let queryText = `UPDATE "events" 
+  // SET event_name = $ ,
+  // description = $,
+  // location = $,
+  // link = $,
+  // start_date = $,
+  // end_date = $
+  // WHERE id = $
+  // ;`;
+  // pool.query(queryText, [req.body.name,])
+  //     .then(result => {
+  //         res.send(result.rows);
+  //     })
+  //     .catch(error => {
+  //         console.log('error updating: ', error)
+  //         alert('Error updating the event. Please contact an admin.')
+  //         res.sendStatus(500);
+  //     })
 })
 
 module.exports = router;
