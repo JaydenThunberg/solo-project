@@ -10,7 +10,7 @@ function* eventSaga() {
 function* deleteEvent(action){
     try{
         yield axios.delete(`api/events/${action.payload}`)
-        yield put({type: 'SET_EVENTS'})
+        yield put({type: 'GET_EVENTS'})
     } catch(error) {
         alert('Sorry, there was an error deleting the event. Please contact an admin.')
         console.log('error in DELETE event:', error);
@@ -22,7 +22,7 @@ function* addEvent(action){
     try {
         //send payload to DB
         yield axios.post(`/api/events`, (action.payload))
-        yield put({ type: 'SET_EVENTS'});
+        yield put({ type: 'GET_EVENTS'});
     } catch (error) {
         alert('Sorry, there was an error adding the event.')
         console.log('error in addEvent', error);
