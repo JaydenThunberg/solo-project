@@ -19,7 +19,7 @@ class Events extends Component {
                 {/* {console.log(this.props.reduxState.events)} */}
                 {this.props.reduxState.events.map((item) => {
                     return (
-                        <EditEvent key={item.event_name} item={item} />
+                        <EditEvent key={item.event_name} item={item} history={this.props.history}/>
                     )
                 })}
                 <EventForm/>

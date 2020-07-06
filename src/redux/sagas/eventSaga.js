@@ -6,11 +6,19 @@ function* eventSaga() {
     yield takeEvery( 'GET_EVENTS', fetchEvents)
     yield takeEvery('NEW_EVENT', addEvent)
     yield takeEvery('DELETE_EVENT', deleteEvent)
+    // yield takeEvery ('EVENT_DETAILS', updateEvent)
 }
 
-function* updateEvent(action) {
-    console.log('in update event with:', action)
-}
+// function* updateEvent(action) {
+//     console.log('in update event with:', action)
+//     try{
+//         //send payload to DB
+//         yield axios.put(`/api/events/${action.payload.event_name}`, (action.payload))
+//         yield put({ type: 'GET_EVENTS'})
+//     } catch(error){
+//         console.log('error making update', error)
+//     } 
+// }
 
 function* deleteEvent(action){
     try{

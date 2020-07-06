@@ -1,6 +1,7 @@
 //This will be a PUT request
 //only admins should be able to access ('/edit') put in a protected route
 //cancel but to got back to '/events' and save that sends PUT request to Saga and DB
+//ADD Sweet Alert are you sure you want to delete this?
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
@@ -8,6 +9,7 @@ import Moment from 'react-moment';
 class EditEvent extends Component {
     deleteEvent = () => {
         console.log('clicked DELETE')
+        //ADD Sweet Alert
         this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id });
         this.props.dispatch({ type: 'GET_EVENT' });
     }//end deleteEvent 
@@ -15,7 +17,7 @@ class EditEvent extends Component {
     editEvent = (details) => {
         console.log('handling detail for:', details);
         // this.props.dispatch({ type: 'GET_DETAILS', payload: details });
-        // this.props.history.push(`/edit/${details.event_name}`)
+        this.props.history.push(`/edit/${details.event_name}`)
     }
 
 

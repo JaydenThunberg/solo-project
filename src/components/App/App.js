@@ -69,6 +69,11 @@ class App extends Component {
                 path="/edit"
                 component={EditEventMap}
               />
+              <ProtectedRoute
+                exact
+                path="/edit"
+                component={EditEvent}
+              />
 
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
