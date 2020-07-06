@@ -12,8 +12,10 @@ class EditEvent extends Component {
         this.props.dispatch({ type: 'GET_EVENT' });
     }//end deleteEvent 
 
-    editDetails = () => {
-        console.log('in edit details')
+    editEvent = (details) => {
+        console.log('handling detail for:', details);
+        // this.props.dispatch({ type: 'GET_DETAILS', payload: details });
+        // this.props.history.push(`/edit/${details.event_name}`)
     }
 
 
@@ -39,9 +41,9 @@ class EditEvent extends Component {
                     <li>
                         {description}
                     </li>
-                    <br/>
+                    <br />
                     <button onClick={this.deleteEvent}>Delete</button>
-                    <button onClick={this.editDetails}>Edit</button>
+                    <button onClick={() => this.editEvent(this.props.item)}>Edit</button>
                 </ul>
             </div>
         )//end return

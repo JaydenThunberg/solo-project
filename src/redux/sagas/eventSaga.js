@@ -1,10 +1,15 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 
+
 function* eventSaga() {
     yield takeEvery( 'GET_EVENTS', fetchEvents)
     yield takeEvery('NEW_EVENT', addEvent)
     yield takeEvery('DELETE_EVENT', deleteEvent)
+}
+
+function* updateEvent(action) {
+    console.log('in update event with:', action)
 }
 
 function* deleteEvent(action){
