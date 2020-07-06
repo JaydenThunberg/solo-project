@@ -7,7 +7,7 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   console.log('in GET events')
-  const queryText = `SELECT "id", "event_name", "description", "link", "start_date", "end_date" from events 
+  const queryText = `SELECT "id", "event_name", "description", "location", "link", "start_date", "end_date" from events 
     WHERE "approved" = TRUE
     ORDER BY "start_date" ASC;`;
   pool.query(queryText)

@@ -14,15 +14,14 @@ class EditEvent extends Component {
         this.props.dispatch({ type: 'GET_EVENT' });
     }//end deleteEvent 
 
-    editEvent = (details) => {
-        console.log('handling detail for:', details);
-        // this.props.dispatch({ type: 'GET_DETAILS', payload: details });
-        this.props.history.push(`/edit/${details.event_name}`)
+    editEvent = (id) => {
+        console.log('handling detail for:', id);
+        this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.item });
+        this.props.history.push(`/edit/${id.event_name}`)
     }
 
 
     render() {
-        { console.log('this.props is:', this.props) }
         const name = this.props.item.event_name;
         const description = this.props.item.description;
         const startDate = this.props.item.start_date;
@@ -45,7 +44,7 @@ class EditEvent extends Component {
                     </li>
                     <br />
                     <button onClick={this.deleteEvent}>Delete</button>
-                    <button onClick={() => this.editEvent(this.props.item)}>Edit</button>
+                    <button onClick={() => this.editEvent(this.props.reduxState.details)}>Edit</button>
                 </ul>
             </div>
         )//end return

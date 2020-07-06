@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import Events from '../Events/Events';
 import EditEvent from '../EditEvent/EditEvent';
 import EditEventMap from '../EditEventMap/EditEventMap';
+import EventDetails from '../EventDetails/EventDetails';
 
 import './App.css';
 
@@ -69,10 +70,13 @@ class App extends Component {
                 path="/edit"
                 component={EditEventMap}
               />
-              <ProtectedRoute
-                exact
+              {/* <ProtectedRoute
                 path="/edit"
                 component={EditEvent}
+              /> */}
+              <ProtectedRoute
+                path="/edit"
+                component={EventDetails}
               />
 
               {/* If none of the other routes matched, we will show a 404. */}

@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeEvery, take } from 'redux-saga/effects';
 
 
 function* eventSaga() {
     yield takeEvery( 'GET_EVENTS', fetchEvents)
     yield takeEvery('NEW_EVENT', addEvent)
     yield takeEvery('DELETE_EVENT', deleteEvent)
+    yield takeEvery('ADMIN_EVENT', adminEvent)
     // yield takeEvery ('EVENT_DETAILS', updateEvent)
 }
 
@@ -31,6 +32,18 @@ function* deleteEvent(action){
 }
 
 function* addEvent(action){
+    console.log(action.payload)
+    try {
+        //send payload to DB
+        yield axios.post(`/api/events`, (action.payload))
+        yield put({ type: 'GET_EVENTS'});
+    } catch (error) {
+        alert('Sorry, there was an error adding the event.')
+        console.log('error in addEvent', error);
+    }
+}//end addEvent
+
+function* adminEvent(action){
     console.log(action.payload)
     try {
         //send payload to DB
