@@ -48,7 +48,7 @@ function* adminEvent(action){
     console.log(action.payload)
     try {
         //send payload to DB
-        yield axios.post(`/api/events`, (action.payload))
+        yield axios.post(`/api/events/admin`, (action.payload))
         yield put({ type: 'GET_ADMIN_EVENTS'});
     } catch (error) {
         alert('Sorry, there was an error adding the event.')

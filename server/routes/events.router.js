@@ -49,6 +49,18 @@ router.post('/', (req, res) => {
       res.sendStatus(500);
     })
 });
+router.post('/admin', (req, res) => {
+  console.log('req.body in POST:', req.body)
+  let queryText = `INSERT INTO "events" ( "event_name", "description", "location", "start_date", "end_date", "link", "approved" )
+  VALUES ($1, $2, $3, $4, $5, $6);`
+  pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.startDate, req.body.endDate, req.body.mediaLink, req.body.approved])
+    .then((result) => {
+      res.sendStatus(201);
+    }).catch((error) => {
+      console.log(error)
+      res.sendStatus(500);
+    })
+});
 
 router.delete('/:id', (req, res) => {
   console.log('in /api/events DELETE ', req.params);
