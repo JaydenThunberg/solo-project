@@ -48,7 +48,7 @@ function* adminEvent(action){
     console.log(action.payload)
     try {
         //send payload to DB
-        yield axios.post(`/api/events/admin`, (action.payload))
+        yield axios.post(`/api/admin`, (action.payload))
         yield put({ type: 'GET_ADMIN_EVENTS'});
     } catch (error) {
         alert('Sorry, there was an error adding the event.')
@@ -69,7 +69,7 @@ function* fetchEvents() {
 
 function* fetchAdminEvents() {
     try {
-        const response = yield axios.get('/api/events/admin');
+        const response = yield axios.get('/api/admin');
         console.log('in getEvents', response.data);
         yield put({ type: 'SET_ADMIN_EVENTS', payload: response.data}); 
     } catch (err) {
