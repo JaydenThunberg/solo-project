@@ -10,7 +10,7 @@ class EventItem extends Component {
         const location = this.props.item.location;
         const startDate = this.props.item.start_date;
         const endDate = this.props.item.end_date;
-        const link = <span><a href={this.props.item.link}>Visit Our Site!</a></span>
+        const link = <span><a href={this.props.item.link}>{this.props.item.event_name}</a></span>
 
         return (
             <div>

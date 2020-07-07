@@ -4,6 +4,13 @@ import {connect} from 'react-redux';
 
 class Stores extends Component {
   // Renders the entire Stores on the DOM
+  componentDidMount() {
+    console.log('component did mount stores')
+    //dispatch call to get the stores
+    this.props.dispatch({ type: 'GET_STORES' })
+    console.log('props in stores are:', this.props)
+}//end componentDidMount
+
   render() {
     return (
       <div className="stores">

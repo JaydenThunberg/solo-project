@@ -23,6 +23,13 @@ const Nav = (props) => (
           </Link>
         </>
       )}
+      {props.user.id && (
+        <>
+          <Link className="nav-link" to="/stores">
+            Stores
+          </Link>
+        </>
+      )}
       {props.user.auth_level >= 2 && (
         <>
           <Link className="nav-link" to="/edit">

@@ -22,6 +22,7 @@ import EditEventMap from '../EditEventMap/EditEventMap';
 import EventDetails from '../EventDetails/EventDetails';
 
 import './App.css';
+import Stores from '../Stores/Stores';
 
 class App extends Component {
   componentDidMount() {
@@ -77,6 +78,10 @@ class App extends Component {
               <ProtectedRoute
                 path="/edit"
                 component={EventDetails}
+              />
+              <ProtectedRoute
+                path="/stores"
+                component={Stores}
               />
 
               {/* If none of the other routes matched, we will show a 404. */}

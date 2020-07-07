@@ -26,6 +26,7 @@ class EditEvent extends Component {
         const description = this.props.item.description;
         const startDate = this.props.item.start_date;
         const endDate = this.props.item.end_date;
+        const link = <span><a href={this.props.item.link}>{this.props.item.event_name}</a></span>
         return (
             <div>
                 <p>Event:</p>
@@ -41,6 +42,9 @@ class EditEvent extends Component {
                     </li>
                     <li>
                         {description}
+                    </li>
+                    <li>
+                        {link}
                     </li>
                     <br />
                     <button onClick={this.deleteEvent}>Delete</button>
