@@ -2,6 +2,7 @@
 //a cancel button that sends back to '/edit'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Moment from 'react-moment';
 
 class EventDetails extends Component {
     state = {
@@ -28,18 +29,34 @@ class EventDetails extends Component {
             ...this.state,
             [type]: event.target.value
         })
-    }//end editMovie
+    }//end editEventDetails
 
+    sendUpdatedEvent = () => {
+        console.log('in send updated event', this.state)
+        //this will have dispatch to PUT request
+        this.props.dispatch({ type:'UPDATE_DETAILS', payload: this.state})
+    }
+
+    backToEvents = () => {
+        this.props.history.push('/events')
+    }
 
     render() {
-        return (
+        return ( 
+            // {console.log('start date is', formatDate)}
             <div>
                 <h1>EventDetails</h1>
                 <div>
-                    <span>Event Name: </span><input placeholder={this.props.reduxState.details.event_name} onChange={(event) => this.editEventDetails(event, 'name')}></input>
-                    <span>Description: </span><input placeholder={this.props.reduxState.details.description} onChange={(event) => this.editEventDetails(event, 'description')}></input>
+                    <span>Event Name: </span><input  placeholder={this.state.name} onChange={(event) => this.editEventDetails(event, 'name')}></input>
+                    <span>Start Date: </span><input placeholder={this.props.reduxState.details.start_date} onChange={(event) => this.editEventDetails(event, 'startDate')}></input>
+                    <span>End Date: </span><input  placeholder={this.props.reduxState.details.end_date} onChange={(event) => this.editEventDetails(event, 'endDate')}></input>
                     <br/>
-                    <button>SAVE</button>
+                    <span>Description: </span><input placeholder={this.props.reduxState.details.description} onChange={(event) => this.editEventDetails(event, 'description')}></input>
+                    <span>Location: </span><input placeholder={this.props.reduxState.details.location} onChange={(event) => this.editEventDetails(event, 'location')}></input>
+                    <span>Link to Media: </span><input placeholder={this.props.reduxState.details.link} onChange={(event) => this.editEventDetails(event, 'mediaLink')}></input>
+                    <br/>
+                    <button onClick={this.sendUpdatedEvent}>SAVE</button>
+                    <button onClick={this.backToEvents}>CANCEL</button>
                 </div>
             </div>
         )//end render

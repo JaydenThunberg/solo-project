@@ -23,7 +23,7 @@ const Nav = (props) => (
           </Link>
         </>
       )}
-      {props.user.id === 1 && (
+      {props.user.auth_level >= 2 && (
         <>
           <Link className="nav-link" to="/edit">
             Edit Events

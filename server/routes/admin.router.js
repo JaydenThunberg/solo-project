@@ -29,4 +29,25 @@ router.get('/', (req, res) => {
       })
   });
 
+  router.put('/:id', (req, res) => {
+    console.log('in PUT req.body is:', req.body)
+    let queryText = `UPDATE "events" 
+    SET event_name = $1,
+    description = $2,
+    location = $3,
+    link = $4,
+    start_date = $5,
+    end_date = $6
+    WHERE id = $7
+    ;`;
+    pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.mediaLink, req.body.startDate, req.body.endDate, req.body.id])
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(error => {
+            console.log('error updating: ', error)
+            alert('Error updating the event. Please contact an admin.')
+            res.sendStatus(500);
+        })
+  })
   module.exports = router;

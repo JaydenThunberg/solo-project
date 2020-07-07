@@ -8,19 +8,19 @@ function* eventSaga() {
     yield takeEvery('DELETE_EVENT', deleteEvent)
     yield takeEvery('ADMIN_EVENT', adminEvent)
     yield takeEvery('GET_ADMIN_EVENTS', fetchAdminEvents)
-    // yield takeEvery ('EVENT_DETAILS', updateEvent)
+    yield takeEvery ('UPDATE_DETAILS', updateEvent)
 }
 
-// function* updateEvent(action) {
-//     console.log('in update event with:', action)
-//     try{
-//         //send payload to DB
-//         yield axios.put(`/api/events/${action.payload.event_name}`, (action.payload))
-//         yield put({ type: 'GET_EVENTS'})
-//     } catch(error){
-//         console.log('error making update', error)
-//     } 
-// }
+function* updateEvent(action) {
+    console.log('in update event with:', action)
+    try{
+        //send payload to DB
+        yield axios.put(`/api/admin/${action.payload.name}`, (action.payload))
+        yield put({ type: 'GET_EVENTS'})
+    } catch(error){
+        console.log('error making update', error)
+    } 
+}
 
 function* deleteEvent(action){
     try{

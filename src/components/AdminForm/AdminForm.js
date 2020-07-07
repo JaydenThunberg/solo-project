@@ -55,7 +55,6 @@ class EventForm extends Component {
                     </div>
                     <br />
                 </div>
-                <p>An admin will need to review your request.</p>
             </div>
         )//end return
     }//end render
