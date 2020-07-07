@@ -11,7 +11,7 @@ class EditEvent extends Component {
         console.log('clicked DELETE')
         //ADD Sweet Alert
         this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id });
-        this.props.dispatch({ type: 'GET_EVENT' });
+        this.props.dispatch({ type: 'GET_ADMIN_EVENTS' });
     }//end deleteEvent 
 
     editEvent = (id) => {
@@ -44,7 +44,7 @@ class EditEvent extends Component {
                     </li>
                     <br />
                     <button onClick={this.deleteEvent}>Delete</button>
-                    <button onClick={() => this.editEvent(this.props.reduxState.details)}>Edit</button>
+                    <button onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
                 </ul>
             </div>
         )//end return

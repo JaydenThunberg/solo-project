@@ -37,7 +37,9 @@ class EventDetails extends Component {
                 <h1>EventDetails</h1>
                 <div>
                     <span>Event Name: </span><input placeholder={this.props.reduxState.details.event_name} onChange={(event) => this.editEventDetails(event, 'name')}></input>
-                    <button>Update Details</button>
+                    <span>Description: </span><input placeholder={this.props.reduxState.details.description} onChange={(event) => this.editEventDetails(event, 'description')}></input>
+                    <br/>
+                    <button>SAVE</button>
                 </div>
             </div>
         )//end render

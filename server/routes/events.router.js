@@ -20,6 +20,19 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     })
 });
+router.get('/admin', (req, res) => {
+  console.log('in GET events')
+  const queryText = `SELECT * FROM events ORDER BY "start_date" ASC;`;
+  pool.query(queryText)
+    .then((result) => {
+      console.log('GET events', result.rows)
+      res.send(result.rows);
+    }).catch((error) => {
+      console.log(error)
+      alert('error with getting events');
+      res.sendStatus(500);
+    })
+});
 
 /**
  * POST route template

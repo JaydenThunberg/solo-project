@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EditEvent from '../EditEvent/EditEvent';
 import EventForm from '../EventForm/EventForm';
+import AdminForm from '../AdminForm/AdminForm';
 
 class Events extends Component {
     // Renders the entire Events on the DOM
@@ -9,7 +10,7 @@ class Events extends Component {
     componentDidMount() {
         console.log('component did mount')
         //dispatch call to get the events
-        this.props.dispatch({ type: 'GET_EVENTS' })
+        this.props.dispatch({ type: 'GET_ADMIN_EVENTS' })
     }//end componentDidMount
     render() {
         return (
@@ -22,7 +23,7 @@ class Events extends Component {
                         <EditEvent key={item.event_name} item={item} history={this.props.history}/>
                     )
                 })}
-                <EventForm/>
+                <AdminForm/>
             </div>
         );//end return
     }//end render

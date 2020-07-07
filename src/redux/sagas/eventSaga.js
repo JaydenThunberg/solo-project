@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeEvery, take } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 
 
 function* eventSaga() {
@@ -7,6 +7,7 @@ function* eventSaga() {
     yield takeEvery('NEW_EVENT', addEvent)
     yield takeEvery('DELETE_EVENT', deleteEvent)
     yield takeEvery('ADMIN_EVENT', adminEvent)
+    yield takeEvery('GET_ADMIN_EVENTS', fetchAdminEvents)
     // yield takeEvery ('EVENT_DETAILS', updateEvent)
 }
 
@@ -48,10 +49,10 @@ function* adminEvent(action){
     try {
         //send payload to DB
         yield axios.post(`/api/events`, (action.payload))
-        yield put({ type: 'GET_EVENTS'});
+        yield put({ type: 'GET_ADMIN_EVENTS'});
     } catch (error) {
         alert('Sorry, there was an error adding the event.')
-        console.log('error in addEvent', error);
+        console.log('error in adminEvent', error);
     }
 }//end addEvent
 
@@ -60,6 +61,17 @@ function* fetchEvents() {
         const response = yield axios.get('/api/events');
         console.log('in getEvents', response.data);
         yield put({ type: 'SET_EVENTS', payload: response.data}); 
+    } catch (err) {
+        alert('Sorry, there was an error getting the events.')
+        console.log('error getting events', err);
+    }
+}//end fetchEvents
+
+function* fetchAdminEvents() {
+    try {
+        const response = yield axios.get('/api/events/admin');
+        console.log('in getEvents', response.data);
+        yield put({ type: 'SET_ADMIN_EVENTS', payload: response.data}); 
     } catch (err) {
         alert('Sorry, there was an error getting the events.')
         console.log('error getting events', err);
