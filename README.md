@@ -1,6 +1,6 @@
 # Let's Go, Retro! Project
 This is an app designed around the needs and wants of the vintage and pinup communities.
-Many of my friends have said they have struggled to find events, clothing, and friends who share similar interests related to these communities. My goal was to design an app that does just that. There will be an event page that allows users to find events and stores page that shows stores that carry the different styles of clothing. In the future, there will be a feature that will show users who have registered with the app and allow them to connect with others. Eventually there will be a search function to allow users to find others based on similarities such as, preferred category, era, or location. They will then be able to connect through whichever social media platform the users decide on.
+Many of my friends have said they have struggled to find events and friends who share similar interests related to these communities. My goal was to design an app that does just that. There will be an event page that allows users to find events and connect them to to others who share the love for vintage and pinup communities.  In the future, there will be a feature that will show users who have registered with the app and allow them to connect with others. Eventually I would like there to be a search function to allow users to find others based on similarities such as, preferred category, era, and/or location.
 
 ## Prerequisites
 
