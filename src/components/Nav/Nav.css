@@ -4,7 +4,7 @@
     display: inline-block;
     /* color: #f2f2f2; */
     padding-left: 10px;
-    background: -webkit-linear-gradient(rgb(230, 243, 248), rgb(68, 77, 80), rgb(57, 64, 66),  rgb(33, 38, 39), rgb(11, 13, 14));
+    background: -webkit-linear-gradient(rgb(230, 243, 248), rgb(142, 151, 155), rgb(68, 77, 80), rgb(57, 64, 66),  rgb(33, 38, 39), rgb(11, 13, 14));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -28,6 +28,7 @@
   border:none;
   cursor: pointer;
   outline:0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .nav-link:hover {
