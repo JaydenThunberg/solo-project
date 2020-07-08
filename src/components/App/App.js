@@ -17,7 +17,7 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import Events from '../Events/Events';
-import EditEvent from '../EditEvent/EditEvent';
+// import EditEvent from '../EditEvent/EditEvent';
 import EditEventMap from '../EditEventMap/EditEventMap';
 import EventDetails from '../EventDetails/EventDetails';
 

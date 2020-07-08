@@ -13,11 +13,15 @@
 .description {
     border-style: solid;
     border-radius: 4px;
-    height: 50px;
+    height: 75px;
     overflow-y: auto;
-    margin: 40px;
+    margin: 5px;
+
 }
 
 .items{
-    margin: 0px 2px 4px 2px;
+    margin: 5px;
+    /* border-style: dotted; */
+    /* color: darkred; */
+    text-align: center;
 }
