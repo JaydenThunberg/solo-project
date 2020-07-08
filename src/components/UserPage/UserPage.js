@@ -8,7 +8,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">
-      Welcome, { props.user.name }!
+      Welcome, { props.user.name }
     </h1>
     <div>
       <h2>Favorite Events</h2>
