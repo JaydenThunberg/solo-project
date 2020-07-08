@@ -1,6 +1,7 @@
 body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: serif;
     margin: 0px;
+    background-color: rgb(171, 189, 195);
 }
 
 .alert {
@@ -9,12 +10,15 @@ body {
 }
 
 form {
-    background-color: #dbd5d5;
+    background-color: rgb(236, 241, 241);
+    color: rgb(33, 38, 39);
     width: 30%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;
-    border-radius: 2px;
+    border-radius: 4px;
+    /* border-style: solid; */
+    border: solid  #88490e;
 }
 
 input {
@@ -44,7 +48,7 @@ input {
     padding:0;
     font: inherit;
     outline:0;
-    border-bottom:1px solid #444; 
+    border-bottom:4px solid  #88490e; 
     cursor: pointer;
 }
 
@@ -66,3 +70,9 @@ input {
 .alignDelete{
     justify-content: center;
 }
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }

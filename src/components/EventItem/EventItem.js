@@ -4,6 +4,9 @@ import Moment from 'react-moment';
 import './EventItem.css';
 
 class EventItem extends Component { 
+    addToFavorites = () => {
+        console.log('in add to faves')
+    }
 
     render() {
         const name = this.props.item.event_name;
@@ -15,9 +18,11 @@ class EventItem extends Component {
 
         return (
             <div className="eventItems">
-                    <div className="items">
-                        <b>{name}</b>
+                {/* eventually move this to have two divs for event name & button and remove empty space span*/}
+                    <div className="items eventText">
+                        <b>{name}</b><span> </span><button className="styleBtn" onClick={this.addToFavorites}><span>⭐️</span> </button>
                     </div>
+                    
                     <div className="items">
                         <span>Dates: </span>
                         <Moment format="MM/DD/YYYY">{startDate}</Moment>
@@ -34,6 +39,7 @@ class EventItem extends Component {
                         {link}
                     </div>
                     <br/>
+
             </div>
 
         )//end return

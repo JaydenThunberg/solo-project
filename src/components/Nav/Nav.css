@@ -1,9 +1,12 @@
 .nav-title {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 700;
     display: inline-block;
-    color: #f2f2f2;
+    /* color: #f2f2f2; */
     padding-left: 10px;
+    background: -webkit-linear-gradient(rgb(230, 243, 248), rgb(68, 77, 80), rgb(57, 64, 66),  rgb(33, 38, 39), rgb(11, 13, 14));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav {
@@ -13,12 +16,12 @@
 
 .nav-link {
   float: left;
-  color: #f2f2f2;
+  color: rgb(33, 38, 39);
   background-color: #b05500;
   text-align: center;
   padding: 24px 10px;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
 
   /* these last two make the logout button in
   the nav bar look like another link */
