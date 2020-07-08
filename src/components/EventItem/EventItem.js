@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
+import './EventItem.css';
 
 class EventItem extends Component { 
 
@@ -13,29 +14,26 @@ class EventItem extends Component {
         const link = <span><a href={this.props.item.link}>{this.props.item.event_name}</a></span>
 
         return (
-            <div>
-                <p>Event:</p>
-                <ul>
-                    <li>
+            <div className="eventItems">
+                    <div className="items">
                         <b>{name}</b>
-                    </li>
-                    <li>
+                    </div>
+                    <div className="items">
                         <span>Dates: </span>
                         <Moment format="MM/DD/YYYY">{startDate}</Moment>
                         <span> - </span>
                         <Moment format="MM/DD/YYYY">{endDate}</Moment>
-                    </li>
-                    <li>
+                    </div>
+                    <div className="items">
                         {location}
-                    </li>
-                    <li>
+                    </div>
+                    <div className="description">
                         {description}
-                    </li>
-                    <li>
+                    </div>
+                    <div className="items">
                         {link}
-                    </li>
-
-                </ul>
+                    </div>
+                    <br/>
             </div>
 
         )//end return

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EventItem from '../EventItem/EventItem';
 import EventForm from '../EventForm/EventForm';
+import './Events.css';
 
 class Events extends Component {
     // Renders the entire Events on the DOM
@@ -12,10 +13,13 @@ class Events extends Component {
         //dispatch call to get the events
         this.props.dispatch({ type: 'GET_EVENTS' })
     }//end componentDidMount
+
     render() {
         return (
             <div className="Events">
+                <div className="eventHeader">
                 <h1>Events</h1>
+                </div>
                 {/* This is a map of the redux state to get events and send them to EventItem */}
                 {/* {console.log(this.props.reduxState.events)} */}
                 {this.props.reduxState.events.map((item) => {
@@ -23,7 +27,7 @@ class Events extends Component {
                         <EventItem key={item.event_name} item={item} />
                     )
                 })}
-                <br/>
+                <br />
                 <EventForm />
             </div>
         );//end return

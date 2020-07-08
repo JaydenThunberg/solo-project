@@ -1,0 +1,23 @@
+.eventItems{
+    display: inline-block;
+    flex: row wrap;
+    margin: 20px;
+    width: 250px;
+    max-height: 200px;
+    justify-content: center;
+    border: thin;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.description {
+    border-style: solid;
+    border-radius: 4px;
+    height: 50px;
+    overflow-y: auto;
+    margin: 40px;
+}
+
+.items{
+    margin: 0px 2px 4px 2px;
+}
