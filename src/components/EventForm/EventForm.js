@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../Events/Events.css';
 
 class EventForm extends Component {
     state = {
@@ -20,7 +21,7 @@ class EventForm extends Component {
 
     sendDetails = () => {
         console.log('state:', this.state)
-        this.props.dispatch({ type:'NEW_EVENT', payload: this.state})
+        this.props.dispatch({ type: 'NEW_EVENT', payload: this.state })
         this.setState({
             name: '',
             startDate: '',
@@ -34,7 +35,9 @@ class EventForm extends Component {
     render() {
         return (
             <div>
-                <h3>Add Event</h3>
+                <div className="addEventTitle">
+                    <h3>Add Event</h3>
+                </div>
                 <div className="eventForm">
                     <span>Event Name: </span><input placeholder="enter name" value={this.state.name} onChange={(event) => this.eventDetails(event, 'name')} />
                     <br />
@@ -44,12 +47,12 @@ class EventForm extends Component {
                     <input placeholder="End: MM/DD/YYYY" value={this.state.endDate} onChange={(event) => this.eventDetails(event, 'endDate')} />
                     <br />
                     <span>Description: </span><input placeholder="event description goes here" value={this.state.description} onChange={(event) => this.eventDetails(event, 'description')} />
-                    <br/>
+                    <br />
                     <span>Location: </span><input placeholder="City, State, Country" value={this.state.location} onChange={(event) => this.eventDetails(event, 'location')} />
                     <span>Link: </span><input placeholder="website/ media" value={this.state.mediaLink} onChange={(event) => this.eventDetails(event, 'mediaLink')} />
                     <br />
                     <div className="alignDelete">
-                    <button onClick={this.sendDetails}>Request to Add</button>
+                        <button onClick={this.sendDetails}>Request to Add</button>
                     </div>
                     <br />
                 </div>

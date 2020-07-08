@@ -5,17 +5,18 @@
     max-width: 300px;
     max-height: 250px;
     justify-content: center;
-    border: thin;
+    border: thin #88490e;
     border-style: solid;
     border-radius: 4px;
+    background-color: rgb(236, 241, 241);
 }
 
 .description {
-    border-style: solid;
+    border: thin #88490e;
     border-radius: 4px;
     height: 75px;
     overflow-y: auto;
-    margin: 5px;
+    margin: 12px;
 
 }
 
@@ -31,9 +32,9 @@
 }
 
 .styleBtn{
-    border: 2px solid #88490e;
+    border: thin solid #88490e;
     background-color: white;
-    color: black;
+    /* color: black; */
     /* padding: 2px 2px; */
     font-size: 16px;
     cursor: pointer;

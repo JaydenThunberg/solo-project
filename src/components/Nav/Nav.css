@@ -12,11 +12,12 @@
 .nav {
   overflow: hidden;
   background-color: #b05500;
+  box-shadow: 1px 0px 10px 2px rgb(230, 243, 248);
 }
 
 .nav-link {
   float: left;
-  color: rgb(33, 38, 39);
+  color: rgb(230, 243, 248);
   background-color: #b05500;
   text-align: center;
   padding: 24px 10px;

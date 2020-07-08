@@ -28,7 +28,9 @@ class Events extends Component {
                     )
                 })}
                 <br />
+                <div>
                 <EventForm />
+                </div>
             </div>
         );//end return
     }//end render

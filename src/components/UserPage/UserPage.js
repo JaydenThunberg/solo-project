@@ -8,9 +8,17 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 const UserPage = (props) => (
   <div>
     <h1 id="welcome">
-      Welcome, { props.user.username }!
+      Welcome, { props.user.name }!
     </h1>
-    <p>Your ID is: {props.user.id}</p>
+    <div>
+      <h2>Favorite Events</h2>
+      {/* this will eventually be directed to a class component that has a map with event favorite by this user, data below is dummy data */}
+      <ul>
+        <li>Viva Las Vegas</li>
+        <li>Nashville Boogie</li>
+        <li>Miss Shannon's Sock Hop</li>
+      </ul>
+    </div>
     <LogOutButton className="log-in" />
   </div>
 );
