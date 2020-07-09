@@ -74,11 +74,39 @@ input {
 }
 
 a:link {
-    color: green;
+    color: #88490e;
     background-color: transparent;
     text-decoration: none;
   }
 
 .footer{
     display: flex;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+.button {
+    background-color: #88490e; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 4px 4px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button1 {
+    background-color: white; 
+    color: #88490e; 
+    border: 2px solid #b05500;
+}
+.button1:hover {
+    background-color: #b05500;
+    color: white;
 }

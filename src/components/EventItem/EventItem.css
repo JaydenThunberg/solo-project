@@ -5,7 +5,7 @@
     max-width: 300px;
     max-height: 250px;
     justify-content: center;
-    border: thin #88490e;
+    border: 2px #88490e;
     border-style: solid;
     border-radius: 4px;
     background-color: rgb(236, 241, 241);
@@ -21,7 +21,7 @@
 }
 
 .items{
-    margin: 5px;
+    margin-top: 5px;
     /* border-style: dotted; */
     /* color: darkred; */
     text-align: center;
@@ -32,7 +32,7 @@
 }
 
 .styleBtn{
-    border: thin solid #88490e;
+    border: 1px solid #88490e;
     background-color: white;
     /* color: black; */
     /* padding: 2px 2px; */

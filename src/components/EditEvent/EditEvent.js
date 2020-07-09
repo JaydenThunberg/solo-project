@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
 import '../EventItem/EventItem.css';
+import '../App/App.css';
 
 class EditEvent extends Component {
     deleteEvent = () => {
@@ -29,26 +30,28 @@ class EditEvent extends Component {
         const endDate = this.props.item.end_date;
         const link = <span><a href={this.props.item.link}>{this.props.item.event_name}</a></span>
         return (
-                <div className="eventItems">
-                    <div className="items eventText">
-                        <b>{name}</b>
-                    </div>
-                    <div className="items">
-                        <span>Dates: </span>
-                        <Moment format="MM/DD/YYYY">{startDate}</Moment>
-                        <span> - </span>
-                        <Moment format="MM/DD/YYYY">{endDate}</Moment>
-                    </div>
-                    <div className="description">
-                        {description}
-                    </div>
-                    <div className="items">
-                        {link}
-                    </div>
-                    <br />
-                    <button onClick={this.deleteEvent}>Delete</button>
-                    <button onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
+            <div className="eventItems">
+                <div className="items eventText">
+                    <b>{name}</b>
                 </div>
+                <div className="items">
+                    <span>Dates: </span>
+                    <Moment format="MM/DD/YYYY">{startDate}</Moment>
+                    <span> - </span>
+                    <Moment format="MM/DD/YYYY">{endDate}</Moment>
+                </div>
+                <div className="description">
+                    {description}
+                </div>
+                <div className="items">
+                    {link}
+                </div>
+                <br />
+                <div className="buttons">
+                <button className="button button1" onClick={this.deleteEvent}>Delete</button>
+                <button className="button button1" onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
+                </div>
+            </div>
         )//end return
     }//end render
 }//end class
