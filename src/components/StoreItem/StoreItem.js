@@ -10,6 +10,7 @@ class StoreItem extends Component {
     return (
       <div className="storeItems">
         <p>StoreItem</p>
+        {console.log(this.props)}
       </div>
     );//end return
   }//end render

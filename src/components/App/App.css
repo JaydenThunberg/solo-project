@@ -78,3 +78,7 @@ a:link {
     background-color: transparent;
     text-decoration: none;
   }
+
+.footer{
+    display: flex;
+}

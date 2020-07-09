@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import EditEvent from '../EditEvent/EditEvent';
-import EventForm from '../EventForm/EventForm';
+// import EventForm from '../EventForm/EventForm';
 import AdminForm from '../AdminForm/AdminForm';
+import '../Events/Events.css';
 
 class Events extends Component {
     // Renders the entire Events on the DOM

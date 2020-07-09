@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import FavoriteItem from '../FavoriteItem/FavoriteItem';
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
@@ -14,9 +15,9 @@ const UserPage = (props) => (
       <h2>Favorite Events</h2>
       {/* this will eventually be directed to a class component that has a map with event favorite by this user, data below is dummy data */}
       <ul>
-        <li>Viva Las Vegas</li>
-        <li>Nashville Boogie</li>
-        <li>Miss Shannon's Sock Hop</li>
+        <p>Viva Las Vegas</p>
+        <p>Nashville Boogie</p>
+        <p>Miss Shannon's Sock Hop</p>
       </ul>
     </div>
     <LogOutButton className="log-in" />

@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
+import '../EventItem/EventItem.css';
 
 class EditEvent extends Component {
     deleteEvent = () => {
@@ -28,29 +29,26 @@ class EditEvent extends Component {
         const endDate = this.props.item.end_date;
         const link = <span><a href={this.props.item.link}>{this.props.item.event_name}</a></span>
         return (
-            <div>
-                <p>Event:</p>
-                <ul>
-                    <li>
+                <div className="eventItems">
+                    <div className="items eventText">
                         <b>{name}</b>
-                    </li>
-                    <li>
+                    </div>
+                    <div className="items">
                         <span>Dates: </span>
                         <Moment format="MM/DD/YYYY">{startDate}</Moment>
                         <span> - </span>
                         <Moment format="MM/DD/YYYY">{endDate}</Moment>
-                    </li>
-                    <li>
+                    </div>
+                    <div className="description">
                         {description}
-                    </li>
-                    <li>
+                    </div>
+                    <div className="items">
                         {link}
-                    </li>
+                    </div>
                     <br />
                     <button onClick={this.deleteEvent}>Delete</button>
                     <button onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
-                </ul>
-            </div>
+                </div>
         )//end return
     }//end render
 }//end class
