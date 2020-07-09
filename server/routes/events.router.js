@@ -1,11 +1,15 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
+const {
+  rejectUnauthenticated,
+} = require("../modules/authentication-middleware");
 
+//if favorite event /req.user.id
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
   console.log('in GET events')
   const queryText = `SELECT "id", "event_name", "description", "location", "link", "start_date", "end_date" from events 
     WHERE "approved" = TRUE
@@ -24,7 +28,7 @@ router.get('/', (req, res) => {
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
   console.log('req.body in POST:', req.body)
   let queryText = `INSERT INTO "events" ( "event_name", "description", "location", "start_date", "end_date", "link" )
   VALUES ($1, $2, $3, $4, $5, $6);`
@@ -37,7 +41,7 @@ router.post('/', (req, res) => {
     })
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated,(req, res) => {
   console.log('in /api/events DELETE ', req.params);
   /* ADD reject if auth_level is less than 2  
   EX: */

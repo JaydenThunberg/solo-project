@@ -6,8 +6,9 @@ import './EventItem.css';
 class EventItem extends Component { 
     addToFavorites = () => {
         console.log('in add to faves')
+        //create a POST request to add this.props.id to favorites junction table
+        
     }
-
     render() {
         const name = this.props.item.event_name;
         const description = this.props.item.description;
@@ -20,7 +21,7 @@ class EventItem extends Component {
             <div className="eventItems">
                 {/* eventually move this to have two divs for event name & button and remove empty space span*/}
                     <div className="items eventText">
-                        <b>{name}</b><span> </span><button className="styleBtn" onClick={this.addToFavorites}><span>⭐️</span> </button>
+                        <b>{name}</b><span> </span><button className="styleBtn" onClick={this.addToFavorites}><span role="img" aria-label="yellow star">⭐️</span> </button>
                     </div>
                     
                     <div className="items">

@@ -2,6 +2,8 @@
 //a cancel button that sends back to '/edit'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../App/App.css';
+import './EventDetails.css';
 
 class EventDetails extends Component {
     state = {
@@ -43,20 +45,38 @@ class EventDetails extends Component {
     render() {
         return ( 
             // {console.log('start date is', formatDate)}
-            <div>
-                <h1>Event Details</h1>
+            <div className="eventDetailsForm">
+                <div className="detailDiv">
+                <h1>Event Details for {this.state.name}</h1>
+                </div>
+                <div className="detailDiv">
                 <p>The only details that will change are those that are edited. Feel free to change as much as you like or simply just the name or description.</p>
-                <div>
+                </div>
+                <div className="detailsInput">
+                    <div className="detailDiv">
                     <span>Event Name: </span><input  placeholder={this.state.name} onChange={(event) => this.editEventDetails(event, 'name')}></input>
+                    </div>
+                    <div className="detailDiv">
                     <span>Start Date: </span><input placeholder={this.props.reduxState.details.start_date} onChange={(event) => this.editEventDetails(event, 'startDate')}></input>
+                    </div>
+                    <div className="detailDiv">
                     <span>End Date: </span><input  placeholder={this.props.reduxState.details.end_date} onChange={(event) => this.editEventDetails(event, 'endDate')}></input>
                     <br/>
+                    </div>
+                    <div className="detailDiv">
                     <span>Description: </span><input placeholder={this.props.reduxState.details.description} onChange={(event) => this.editEventDetails(event, 'description')}></input>
+                    </div>
+                    <div className="detailDiv">
                     <span>Location: </span><input placeholder={this.props.reduxState.details.location} onChange={(event) => this.editEventDetails(event, 'location')}></input>
+                    </div>
+                    <div className="detailDiv">
                     <span>Link to Media: </span><input placeholder={this.props.reduxState.details.link} onChange={(event) => this.editEventDetails(event, 'mediaLink')}></input>
+                    </div>
                     <br/>
-                    <button onClick={this.sendUpdatedEvent}>SAVE</button>
-                    <button onClick={this.backToEvents}>CANCEL</button>
+                    <div className="detailDiv">
+                    <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
+                    <button className="button button1" onClick={this.backToEvents}>CANCEL</button>
+                    </div>
                 </div>
             </div>
         )//end render

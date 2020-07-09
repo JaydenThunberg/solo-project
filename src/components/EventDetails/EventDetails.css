@@ -1,0 +1,12 @@
+.eventDetailsForm{
+    margin: 20px 100px 20px 100px;
+    max-width: fit-content;
+    border: 2px solid ;
+}
+
+.detailDiv{
+    margin-left: 20px;
+}
+.detailsInput{
+    display: inline-block;
+}
