@@ -15,6 +15,7 @@ class UserPage extends Component {
           Welcome, {this.props.user.name}
         </h1>
         <div>
+          {console.log('props are:', this.props)}
           <h2>Favorite Events</h2>
           {/* this will eventually be directed to a class component that has a map with event favorite by this user, data below is dummy data */}
           <ul>
@@ -35,6 +36,7 @@ class UserPage extends Component {
 // const mapStateToProps = ({user}) => ({ user });
 const mapStateToProps = state => ({
   user: state.user,
+  events: state.events
 });
 
 // this allows us to use <App /> in index.js

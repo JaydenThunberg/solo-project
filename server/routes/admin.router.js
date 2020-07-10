@@ -10,7 +10,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = `SELECT * FROM events ORDER BY "start_date" ASC;`;
     pool.query(queryText)
       .then((result) => {
-        console.log('GET events', result.rows)
+        // console.log('GET events', result.rows)
         res.send(result.rows);
       }).catch((error) => {
         console.log(error)
