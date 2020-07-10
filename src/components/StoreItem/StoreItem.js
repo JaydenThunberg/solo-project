@@ -36,7 +36,7 @@ class StoreItem extends Component {
           </tbody>
         </table>
         <div>
-          <button onClick={this.backToStores}>Back</button>
+          {/* <button onClick={this.backToStores}>Back</button> */}
         </div>
       </div>
     );//end return

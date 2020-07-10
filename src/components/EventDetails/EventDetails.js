@@ -57,7 +57,7 @@ class EventDetails extends Component {
                     <span>Event Name: </span><input  placeholder={this.state.name} onChange={(event) => this.editEventDetails(event, 'name')}></input>
                     </div>
                     <div className="detailDiv">
-                    <span>Start Date: </span><input placeholder={this.props.reduxState.details.start_date} onChange={(event) => this.editEventDetails(event, 'startDate')}></input>
+                    <span>Start Date: </span><input placeholder="YYYY/MM/DD" onChange={(event) => this.editEventDetails(event, 'startDate')}></input>
                     </div>
                     <div className="detailDiv">
                     <span>End Date: </span><input  placeholder={this.props.reduxState.details.end_date} onChange={(event) => this.editEventDetails(event, 'endDate')}></input>

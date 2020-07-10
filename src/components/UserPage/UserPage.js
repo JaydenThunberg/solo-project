@@ -16,12 +16,12 @@ class UserPage extends Component {
         </h1>
         <div>
           {console.log('props are:', this.props)}
-          <h2>Favorite Events</h2>
+          <h2><span role="img" aria-label="yellow star">⭐️ </span>Favorite Events<span role="img" aria-label="yellow star"> ⭐️</span></h2>
           {/* this will eventually be directed to a class component that has a map with event favorite by this user, data below is dummy data */}
           <ul>
-            <p>Viva Las Vegas</p>
-            <p>Nashville Boogie</p>
-            <p>Miss Shannon's Sock Hop</p>
+            <p><a href="https://www.vivalasvegas.net/">Viva Las Vegas</a></p>
+            <p><a href="http://www.nashvilleboogie.com/">Nashville Boogie</a> </p>
+            <p><a href="https://www.facebook.com/groups/missshannonssatsockhop/events">Miss Shannon's Sock Hop</a></p>
           </ul>
         </div>
         <LogOutButton className="log-in" />
