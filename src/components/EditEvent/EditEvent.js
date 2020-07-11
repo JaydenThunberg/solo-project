@@ -47,7 +47,7 @@ class EditEvent extends Component {
                     {link}
                 </div>
                 <br />
-                <div className="buttons">
+                <div className="buttons btnMargin">
                 {/* <button className="button button1" onClick={this.deleteEvent}>Delete</button> */}
                 <button className="button button1" onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
                 </div>

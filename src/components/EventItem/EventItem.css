@@ -2,8 +2,8 @@
     display: inline-block;
     flex: row wrap;
     margin: 20px;
-    max-width: 300px;
-    max-height: 250px;
+    width: 300px;
+    height: 250px;
     justify-content: center;
     border: 2px #88490e;
     border-style: solid;
@@ -17,7 +17,8 @@
     height: 75px;
     overflow-y: auto;
     margin: 12px;
-
+    min-width: 100px;
+    min-height: 50px;
 }
 
 .items{

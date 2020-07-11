@@ -64,13 +64,15 @@ input {
 
 
 .eventForm{
-    border-style: double;
+    border: 2px double #b05500;
+    /* border-style: double ; */
     max-width: 600px;
     max-height: max-content;
 }
 
 .alignDelete{
     justify-content: center;
+    margin-left: 250px ;
 }
 
 a:link {
@@ -109,4 +111,19 @@ a:link {
 .button1:hover {
     background-color: #b05500;
     color: white;
+}
+.formItems{
+    margin-left: 20px;
+    color: #88490e;
+    font-weight: bold;
+}
+.formItem1{
+    margin-left: 250px;
+}
+.formItem2{
+    margin-top: 20px;
+}
+
+.btnMargin{
+    margin-left: 90px;
 }
