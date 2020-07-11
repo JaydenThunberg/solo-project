@@ -39,7 +39,7 @@ class EventDetails extends Component {
     }
 
     backToEvents = () => {
-        this.props.history.push('/events')
+        this.props.history.push('/edit')
     }
 
     render() {
@@ -74,6 +74,7 @@ class EventDetails extends Component {
                     </div>
                     <br/>
                     <div className="detailDiv">
+                    <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
                     <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
                     <button className="button button1" onClick={this.backToEvents}>CANCEL</button>
                     </div>

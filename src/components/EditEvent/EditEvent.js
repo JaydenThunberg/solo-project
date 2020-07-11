@@ -19,7 +19,7 @@ class EditEvent extends Component {
     editEvent = (id) => {
         console.log('handling detail for:', id);
         this.props.dispatch({ type: 'GET_DETAILS', payload: this.props.item });
-        this.props.history.push(`/edit/${id.event_name}`)
+        this.props.history.push(`/edit/${this.props.item.event_name}`)
     }
 
 
