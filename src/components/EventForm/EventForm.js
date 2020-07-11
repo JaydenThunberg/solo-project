@@ -35,24 +35,30 @@ class EventForm extends Component {
     render() {
         return (
             <div>
-                <div className="addEventTitle">
-                    <h3>Add Event</h3>
-                </div>
                 <div className="eventForm">
-                    <span>Event Name: </span><input placeholder="enter name" value={this.state.name} onChange={(event) => this.eventDetails(event, 'name')} />
-                    <br />
-                    <span>Dates: </span>
-                    <input placeholder="Start: MM/DD/YYYY" value={this.state.startDate} onChange={(event) => this.eventDetails(event, 'startDate')} />
-                    <span>to</span>
-                    <input placeholder="End: MM/DD/YYYY" value={this.state.endDate} onChange={(event) => this.eventDetails(event, 'endDate')} />
-                    <br />
-                    <span>Description: </span><input placeholder="event description goes here" value={this.state.description} onChange={(event) => this.eventDetails(event, 'description')} />
-                    <br />
-                    <span>Location: </span><input placeholder="City, State, Country" value={this.state.location} onChange={(event) => this.eventDetails(event, 'location')} />
-                    <span>Link: </span><input placeholder="website/ media" value={this.state.mediaLink} onChange={(event) => this.eventDetails(event, 'mediaLink')} />
-                    <br />
+                    <div className="formItems formItem1">
+                        <h3>Add Event</h3>
+                    </div>
+                    <div className="formItems">
+                        <span>Event Name: </span><input placeholder="enter name" value={this.state.name} onChange={(event) => this.eventDetails(event, 'name')} />
+                    </div>
+                    <div className="formItems">
+                        <span>Dates: </span>
+                        <input placeholder="Start: MM/DD/YYYY" value={this.state.startDate} onChange={(event) => this.eventDetails(event, 'startDate')} />
+                        <span>to</span>
+                        <input placeholder="End: MM/DD/YYYY" value={this.state.endDate} onChange={(event) => this.eventDetails(event, 'endDate')} />
+                    </div>
+                    <div className="formItems">
+                        <span>Description: </span><input placeholder="event description goes here" value={this.state.description} onChange={(event) => this.eventDetails(event, 'description')} />
+                    </div>
+                    <div className="formItems">
+                        <span>Location: </span><input placeholder="City, State, Country" value={this.state.location} onChange={(event) => this.eventDetails(event, 'location')} />
+                    </div>
+                    <div className="formItems">
+                        <span>Link: </span><input placeholder="website/ media" value={this.state.mediaLink} onChange={(event) => this.eventDetails(event, 'mediaLink')} />
+                    </div>
                     <div className="alignDelete">
-                        <button onClick={this.sendDetails}>Request to Add</button>
+                        <button className="button button1" onClick={this.sendDetails}>Request to Add</button>
                     </div>
                     <br />
                 </div>
