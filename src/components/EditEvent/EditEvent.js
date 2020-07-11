@@ -9,12 +9,12 @@ import '../EventItem/EventItem.css';
 import '../App/App.css';
 
 class EditEvent extends Component {
-    deleteEvent = () => {
-        console.log('clicked DELETE')
-        //ADD Sweet Alert
-        this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id });
-        this.props.dispatch({ type: 'GET_ADMIN_EVENTS' });
-    }//end deleteEvent 
+    // deleteEvent = () => {
+    //     console.log('clicked DELETE')
+    //     //ADD Sweet Alert
+    //     this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.item.id });
+    //     this.props.dispatch({ type: 'GET_ADMIN_EVENTS' });
+    // }//end deleteEvent 
 
     editEvent = (id) => {
         console.log('handling detail for:', id);
@@ -48,7 +48,7 @@ class EditEvent extends Component {
                 </div>
                 <br />
                 <div className="buttons">
-                <button className="button button1" onClick={this.deleteEvent}>Delete</button>
+                {/* <button className="button button1" onClick={this.deleteEvent}>Delete</button> */}
                 <button className="button button1" onClick={() => this.editEvent(this.props.reduxState.details)}>Update Event</button>
                 </div>
             </div>

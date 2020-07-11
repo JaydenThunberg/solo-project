@@ -15,14 +15,23 @@ class EventDetails extends Component {
         location: this.props.reduxState.details.location,
         mediaLink: this.props.reduxState.details.link
     }
+
+    backToEvents = () => {
+        this.props.history.push('/edit')
+    }
+    
     componentDidMount() {
         console.log('props for detail are:', this.props.reduxState.details)
         console.log('beginning state is:', this.state)
     }
 
-    updatedDetails = () => {
-        console.log('current state:', this.state)
-    }
+    deleteEvent = () => {
+        console.log('clicked DELETE', this.props.reduxState.details)
+        //ADD Sweet Alert
+        this.props.dispatch({ type: 'DELETE_EVENT', payload: this.props.reduxState.details.id });
+        this.props.dispatch({ type: 'GET_ADMIN_EVENTS' });
+        this.props.history.push('/edit')
+    }//end deleteEvent 
 
     editEventDetails = (event, type) => {
         console.log('edit details are:', event.target.value);
@@ -38,8 +47,8 @@ class EventDetails extends Component {
         this.props.dispatch({ type:'UPDATE_DETAILS', payload: this.state})
     }
 
-    backToEvents = () => {
-        this.props.history.push('/edit')
+    updatedDetails = () => {
+        console.log('current state:', this.state)
     }
 
     render() {
@@ -75,7 +84,7 @@ class EventDetails extends Component {
                     <br/>
                     <div className="detailDiv">
                     <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
-                    <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
+                    <button className="button button1" onClick={this.deleteEvent}>DELETE</button>
                     <button className="button button1" onClick={this.backToEvents}>CANCEL</button>
                     </div>
                 </div>
