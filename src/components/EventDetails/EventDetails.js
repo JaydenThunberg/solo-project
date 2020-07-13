@@ -13,7 +13,8 @@ class EventDetails extends Component {
         endDate: this.props.reduxState.details.end_date,
         description: this.props.reduxState.details.description,
         location: this.props.reduxState.details.location,
-        mediaLink: this.props.reduxState.details.link
+        mediaLink: this.props.reduxState.details.link,
+        approved: true
     }
 
     backToEvents = () => {
@@ -51,7 +52,7 @@ class EventDetails extends Component {
     sendApproval = () => {
         console.log('send approval')
         //this will be a PUT request to update
-        this.props.dispatch({ type:'UPDATE_DETAILS', payload: this.state})
+        this.props.dispatch({ type:'UPDATE_APPROVED', payload: this.state})
         this.props.history.push('/edit')
     }
 
