@@ -3,7 +3,27 @@ This is an app designed around the needs and wants of the vintage and pinup comm
 Many of my friends have said they have struggled to find events and friends who share similar interests related to these communities. My goal was to design an app that does just that. There will be an event page that allows users to find events and connect them to to others who share the love for vintage and pinup communities.  In the future, there will be a feature that will show users who have registered with the app and allow them to connect with others. Eventually I would like there to be a search function to allow users to find others based on similarities such as, preferred category, era, and/or location.
 This is a fully CRUD app that allows you to add, delete, update, and get events from the database.
 
-<img src="/AppImages/Home.png" alt="screenshot of project">
+# View from Login Page
+<img src="/AppImages/Login.png" alt="screenshot of project login page">
+
+# View from Home Page
+<img src="/AppImages/Home.png" alt="screenshot of project home page">
+
+# View from Events Page(Computer)
+<img src="/AppImages/EventsFull.png" alt="screenshot of project events page">
+
+# View from Events Page(Tablet)
+<img src="/AppImages/EventsTablet.png" alt="screenshot of project events page">
+
+# View from Events Page(Phone)
+<img src="/AppImages/EventsPhone.png" alt="screenshot of project events page">
+
+# View from Update Page
+<img src="/AppImages/UpdateEvent.png" alt="screenshot of project home page">
+
+# View from Update Detail View
+<img src="/AppImages/UpdateDetail.png" alt="screenshot of project home page">
+
 ## Prerequisites
 
 Before you get started, make sure you have the following software installed on your computer:
