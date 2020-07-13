@@ -41,3 +41,27 @@ CREATE TABLE "stores" (
     "link" VARCHAR(300) DEFAULT 'N/A',
     "user_id" INT REFERENCES "user"
 );
+
+
+CREATE TABLE "era"(
+	"id" SERIAL PRIMARY KEY,
+    "timeframe" VARCHAR (30)
+);
+
+CREATE TABLE "favorites"(
+	"id" SERIAL PRIMARY KEY,
+    "event_id"  INT REFERENCES events,
+    "user_id" INT REFERENCES "user"
+);
+
+INSERT INTO "category" ("type")
+VALUES ('weekender'), ('meetup'), ('swing dance'), ('car show'), ('music'), ('dance'), ('pinup contest'), ('other');
+
+INSERT INTO "category" ("style")
+VALUES ('true vintage'), ('reproduction'), ('pinup'), ('rockabilly'), ('modern'), ('other');
+
+INSERT INTO "era" ("timeframe")
+VALUES ('true vintage'), ('reproduction'), ('pinup'), ('rockabilly'), ('modern'), ('other');
+
+INSERT INTO "events" ("event_name", "description", "category_id", "link", "user_id")
+VALUES ('Viva Las Vegas', 'The Viva Las Vegas Rockabilly Weekender is the largest and most respected Rockabilly festival in the world and is now the longest-running music festival in Las Vegas, having just celebrated its 20th anniversary.', 'Las Vegas, NV, USA', 'https://www.vivalasvegas.net/');
