@@ -45,6 +45,7 @@ class EventDetails extends Component {
         console.log('in send updated event', this.state)
         //this will have dispatch to PUT request
         this.props.dispatch({ type:'UPDATE_DETAILS', payload: this.state})
+        this.props.history.push('/edit')
     }
 
     updatedDetails = () => {
@@ -82,7 +83,7 @@ class EventDetails extends Component {
                     <span>Link to Media: </span><input placeholder={this.props.reduxState.details.link} onChange={(event) => this.editEventDetails(event, 'mediaLink')}></input>
                     </div>
                     <br/>
-                    <div className="detailDiv">
+                    <div className="detailDiv saveBtn">
                     <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
                     <button className="button button1" onClick={this.deleteEvent}>DELETE</button>
                     <button className="button button1" onClick={this.backToEvents}>CANCEL</button>

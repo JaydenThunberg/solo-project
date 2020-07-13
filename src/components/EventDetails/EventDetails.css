@@ -1,7 +1,7 @@
 .eventDetailsForm{
     margin: 20px 100px 20px 100px;
     max-width: fit-content;
-    border: 2px solid ;
+    border: 2px solid #b05500;
 }
 
 .detailDiv{
@@ -9,4 +9,9 @@
 }
 .detailsInput{
     display: inline-block;
+}
+
+.saveBtn{
+    margin-left: 100px;
+    margin-bottom: 30px;
 }
