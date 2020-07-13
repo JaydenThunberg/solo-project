@@ -9,6 +9,18 @@ function* eventSaga() {
     yield takeEvery('ADMIN_EVENT', adminEvent)
     yield takeEvery('GET_ADMIN_EVENTS', fetchAdminEvents)
     yield takeEvery ('UPDATE_DETAILS', updateEvent)
+    yield takeEvery ('UPDATE_APPROVED', updateApproved)
+}
+
+function* updateApproved(action) {
+    console.log('in update event with:', action)
+    try{
+        //send payload to DB
+        yield axios.put(`/api/admin/approved/${action.payload.name}`, (action.payload))
+        yield put({ type: 'GET_EVENTS'})
+    } catch(error){
+        console.log('error making update', error)
+    } 
 }
 
 function* updateEvent(action) {

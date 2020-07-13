@@ -22,16 +22,16 @@ class AdminForm extends Component {
 
     sendDetails = () => {
         console.log('state:', this.state)
-        // this.props.dispatch({ type:'ADMIN_EVENT', payload: this.state})
-        // this.setState({
-        //     name: '',
-        //     startDate: '',
-        //     endDate: '',
-        //     description: '',
-        //     location: '',
-        //     mediaLink: '',
-        //     approved: true
-        // })
+        this.props.dispatch({ type:'ADMIN_EVENT', payload: this.state})
+        this.setState({
+            name: '',
+            startDate: '',
+            endDate: '',
+            description: '',
+            location: '',
+            mediaLink: '',
+            approved: true
+        })
     }//end send details
 
     render() {

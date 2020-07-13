@@ -48,8 +48,11 @@ class EventDetails extends Component {
         this.props.history.push('/edit')
     }
 
-    updatedDetails = () => {
-        console.log('current state:', this.state)
+    sendApproval = () => {
+        console.log('send approval')
+        //this will be a PUT request to update
+        this.props.dispatch({ type:'UPDATE_DETAILS', payload: this.state})
+        this.props.history.push('/edit')
     }
 
     render() {
@@ -85,6 +88,7 @@ class EventDetails extends Component {
                     <br/>
                     <div className="detailDiv saveBtn">
                     <button className="button button1" onClick={this.sendUpdatedEvent}>SAVE</button>
+                    <button className="button button1" onClick={this.sendApproval}>APPROVE</button>
                     <button className="button button1" onClick={this.deleteEvent}>DELETE</button>
                     <button className="button button1" onClick={this.backToEvents}>CANCEL</button>
                     </div>

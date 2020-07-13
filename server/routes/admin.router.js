@@ -22,7 +22,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('req.body in POST:', req.body)
     let queryText = `INSERT INTO "events" ( "event_name", "description", "location", "start_date", "end_date", "link", "approved" )
-    VALUES ($1, $2, $3, $4, $5, $6);`
+    VALUES ($1, $2, $3, $4, $5, $6, $7);`
     pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.startDate, req.body.endDate, req.body.mediaLink, req.body.approved])
       .then((result) => {
         res.sendStatus(201);
@@ -44,6 +44,29 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     WHERE id = $7
     ;`;
     pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.mediaLink, req.body.startDate, req.body.endDate, req.body.id])
+        .then(result => {
+            res.send(result.rows);
+        })
+        .catch(error => {
+            console.log('error updating: ', error)
+            alert('Error updating the event. Please contact an admin.')
+            res.sendStatus(500);
+        })
+  });
+
+  router.put('/approved/:id', rejectUnauthenticated, (req, res) => {
+    console.log('in PUT req.body is:', req.body)
+    let queryText = `UPDATE "events" 
+    SET event_name = $1,
+    description = $2,
+    location = $3,
+    link = $4,
+    start_date = $5,
+    end_date = $6,
+    approved = $7
+    WHERE id = $8
+    ;`;
+    pool.query(queryText, [req.body.name, req.body.description, req.body.location, req.body.mediaLink, req.body.startDate, req.body.endDate, req.body.approved, req.body.id])
         .then(result => {
             res.send(result.rows);
         })
